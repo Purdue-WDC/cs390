@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .dot {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background: red;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="number" />
+    <section></section>
+    <script>
+      const section = document.querySelector("section");
+      const input = document.querySelector("input");
+      input.addEventListener("input", () => {
+        section.innerHTML = "";
+        const {valueAsNumber} = input;
+        const divs = Array.from({length: valueAsNumber}).map(() => {
+          const div = document.createElement("div");
+          div.className = "dot";
+          return div;
+        });
+        section.append(...divs);
+      });
+      //   const {dot1, dot2, dot3, dot4} = window;
+      document.onmousemove = ({clientX, clientY}) => {
+        let increment = 100;
+        [...section.children].forEach((dot, index) => {
+          const time = (index + 1) * increment;
+          setTimeout(() => {
+            dot.style.transform = `translate3d(${clientX}px, ${clientY}px, 0)`;
+          }, time);
+        });
+      };
+    </script>
+  </body>
+</html>
