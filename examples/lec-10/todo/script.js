@@ -4,7 +4,6 @@ const todoList = $("#todos");
 const completedTasks = $("#completed");
 const todoForm = $("#todo-form");
 const input = $("#input");
-const todos = [];
 
 function todoChild(text, status) {
   const li = document.createElement("li");
@@ -32,7 +31,6 @@ function todoChild(text, status) {
   return li;
 }
 function createTodo(name) {
-  todos.push({name, status: false});
   todoList.appendChild(todoChild(name));
 }
 function completeTodo(li, text) {
