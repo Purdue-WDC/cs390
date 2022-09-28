@@ -47,7 +47,7 @@ export function Todo() {
               <button
                 onClick={() => {
                   const temp = clone(todos);
-                  temp.completed = temp.pending.filter(
+                  temp.completed = temp.completed.filter(
                     (item) => item.id !== x.id
                   );
 
