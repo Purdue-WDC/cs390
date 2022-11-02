@@ -13,11 +13,11 @@ function App() {
     // maybe a state here?
     // send a POST request
     // with JSON data
-    // name and college as 
+    // name and college as
     // {"name":name, "college":college}
     // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
-    const resp = await fetch("http://localhost:3000/user",{
-
+    const resp = await fetch("http://localhost:3000/user", {
+      // ??
     });
     const json = await resp.json();
     console.log(json);
