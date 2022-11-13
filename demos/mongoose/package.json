@@ -1,16 +1,17 @@
 {
-  "devDependencies": {
-    "concurrently": "^7.5.0"
-  },
   "name": "fullstack-template",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently 'cd backend; npm run start' 'cd frontend; npm run dev'"
+    "dev": "zx run.mjs",
+    "postinstall": "zx install-all.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "zx": "^7.1.1"
+  }
 }
